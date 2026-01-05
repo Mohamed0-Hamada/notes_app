@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folder/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({required this.onTap});
+  const CustomButton({required this.onTap} );
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
