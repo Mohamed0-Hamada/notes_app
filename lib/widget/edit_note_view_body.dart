@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:folder/constants.dart';
+import 'package:folder/cubits/add_note_cuit/add_note_cubit.dart';
 import 'package:folder/cubits/notes_cubit/notes_cubit.dart';
 import 'package:folder/models/note_model.dart';
+import 'package:folder/widget/colors_list_view.dart';
 import 'package:folder/widget/custom_app_bar.dart';
 import 'package:folder/widget/custom_text_form_field.dart';
+import 'package:folder/widget/edit_note_color_list_view.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
@@ -49,6 +53,8 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             hintText: widget.note.subtitle,
             maxLines: 5,
           ),
+          const SizedBox(height: 16),
+          EditNoteColorList(note: widget.note),
         ],
       ),
     );

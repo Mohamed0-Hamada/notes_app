@@ -52,6 +52,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Adding Note...'),
+                        duration: Duration(seconds: 3),
+                      ),
+                    );
                     var currentDate = DateTime.now();
                     var formattdCurrentDate = DateFormat(
                       'dd-mm-yyyy',
